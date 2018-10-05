@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="">
+    <link rel="apple-touch-icon-precomposed" href="">
+    <meta name="apple-mobile-web-app-title" content=""/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+    <!--<link rel="stylesheet" href="//s.amazeui.org/assets/2.x/css/amaze.min.css?v=ivneke1e">-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="//s.amazeui.org/assets/2.x/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    <!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <!--<script src="http://cdn.amazeui.org/modernizr/2.8.3/modernizr.js"></script>-->
+    <!--<script src="//s.amazeui.org/assets/2.x/js/amazeui.ie8polyfill.min.js"></script>-->
+    <![endif]-->
+    <script src="//cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <!--<link rel="canonical" href="http://amazeui.org/javascript/scrollspy?_ver=2.x"/>-->
+    <style type="text/css">
+        .animation-container{
+            position: relative;
+        }
+        .animation-content{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+<ul>
+    <li class="btn">11111</li>
+    <li class="btn">22222</li>
+    <li class="btn">33333</li>
+</ul>
+<div class="doc-example am-u-sm-6 am-u-sm-offset-3 animation-container">
+    <div class="animation-content">
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'fade'}">
+                    <div class="am-panel-hd">Fade</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-4 am-u-lg-offset-3">
+                <div class="am-panel am-panel-secondary" data-am-scrollspy="{animation: 'scale-up'}">
+                    <div class="am-panel-hd">Scale-up</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-6">
+                <div class="am-panel am-panel-success" data-am-scrollspy="{animation: 'scale-down'}">
+                    <div class="am-panel-hd">Scale-down</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-9">
+                <div class="am-panel am-panel-warning" data-am-scrollspy="{animation: 'slide-top'}">
+                    <div class="am-panel-hd">Slide Top</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-6">
+                <div class="am-panel am-panel-danger" data-am-scrollspy="{animation: 'slide-bottom'}">
+                    <div class="am-panel-hd">Slide Bottom</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-4 am-u-lg-offset-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'slide-right'}">
+                    <div class="am-panel-hd">Slide Right</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-secondary" data-am-scrollspy="{animation: 'slide-left'}">
+                    <div class="am-panel-hd">Slide Left</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-success" data-am-scrollspy="{animation: 'fade'}">
+                    <div class="am-panel-hd">Fade</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-warning" data-am-scrollspy="{animation: 'fade', delay: 300}">
+                    <div class="am-panel-hd">Fade delay: 300</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-danger" data-am-scrollspy="{animation: 'fade', delay: 600}">
+                    <div class="am-panel-hd">Fade delay: 600</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'fade', delay: 900}">
+                    <div class="am-panel-hd">Fade delay: 900</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="animation-content">
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'fade'}">
+                    <div class="am-panel-hd">Fade</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-4 am-u-lg-offset-3">
+                <div class="am-panel am-panel-secondary" data-am-scrollspy="{animation: 'scale-up'}">
+                    <div class="am-panel-hd">Scale-up</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-6">
+                <div class="am-panel am-panel-success" data-am-scrollspy="{animation: 'scale-down'}">
+                    <div class="am-panel-hd">Scale-down</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-9">
+                <div class="am-panel am-panel-warning" data-am-scrollspy="{animation: 'slide-top'}">
+                    <div class="am-panel-hd">Slide Top</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-6">
+                <div class="am-panel am-panel-danger" data-am-scrollspy="{animation: 'slide-bottom'}">
+                    <div class="am-panel-hd">Slide Bottom</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-4 am-u-lg-offset-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'slide-right'}">
+                    <div class="am-panel-hd">Slide Right</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-secondary" data-am-scrollspy="{animation: 'slide-left'}">
+                    <div class="am-panel-hd">Slide Left</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-success" data-am-scrollspy="{animation: 'fade'}">
+                    <div class="am-panel-hd">Fade</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-warning" data-am-scrollspy="{animation: 'fade', delay: 300}">
+                    <div class="am-panel-hd">Fade delay: 300</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-danger" data-am-scrollspy="{animation: 'fade', delay: 600}">
+                    <div class="am-panel-hd">Fade delay: 600</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'fade', delay: 900}">
+                    <div class="am-panel-hd">Fade delay: 900</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="animation-content">
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'fade'}">
+                    <div class="am-panel-hd">Fade</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-4 am-u-lg-offset-3">
+                <div class="am-panel am-panel-secondary" data-am-scrollspy="{animation: 'scale-up'}">
+                    <div class="am-panel-hd">Scale-up</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-6">
+                <div class="am-panel am-panel-success" data-am-scrollspy="{animation: 'scale-down'}">
+                    <div class="am-panel-hd">Scale-down</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-9">
+                <div class="am-panel am-panel-warning" data-am-scrollspy="{animation: 'slide-top'}">
+                    <div class="am-panel-hd">Slide Top</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-8 am-u-lg-offset-6">
+                <div class="am-panel am-panel-danger" data-am-scrollspy="{animation: 'slide-bottom'}">
+                    <div class="am-panel-hd">Slide Bottom</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3 am-u-md-offset-4 am-u-lg-offset-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'slide-right'}">
+                    <div class="am-panel-hd">Slide Right</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-secondary" data-am-scrollspy="{animation: 'slide-left'}">
+                    <div class="am-panel-hd">Slide Left</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-success" data-am-scrollspy="{animation: 'fade'}">
+                    <div class="am-panel-hd">Fade</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-warning" data-am-scrollspy="{animation: 'fade', delay: 300}">
+                    <div class="am-panel-hd">Fade delay: 300</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-danger" data-am-scrollspy="{animation: 'fade', delay: 600}">
+                    <div class="am-panel-hd">Fade delay: 600</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+            <div class="am-u-sm-12 am-u-md-4 am-u-lg-3">
+                <div class="am-panel am-panel-primary" data-am-scrollspy="{animation: 'fade', delay: 900}">
+                    <div class="am-panel-hd">Fade delay: 900</div>
+                    <div class="am-panel-bd"><img src="assets/img/32.jpg" width="100%" height="300px" alt=""/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    $(".btn").click(function(){
+        var _index = $('.btn').index($(this));
+        $(".animation-content").css({zIndex:1});
+        $(".animation-content").eq(_index).css({zIndex:2});
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.DS_Store
+node_modules
+/.idea
+/dist/*.html
+/dist/docs
+/docs
+gulpfile.js
+.editorconfig
+.gitignore
+.npmignore
+.publish
+.eslintrc

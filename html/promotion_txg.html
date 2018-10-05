@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <link rel="stylesheet" href="../assets/css/reset.css"/>
+    <script src="../assets/js/jquery.min.js"></script>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+        }
+        .header{
+            position: relative;
+        }
+        .header img{
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        .btn{
+            display: block;
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .btn .btn-focus{
+            display: none;
+            position: absolute;
+            top: -4px;
+            left: -3px;
+
+        }
+        .btn:hover .btn-focus{
+            display: block;
+        }
+        .title{
+            /*padding-left: 15px;*/
+            width: 100%;
+            height: 30px;
+        }
+        .content{
+            padding: 18px;
+        }
+        .content p{
+            margin: 0;
+            padding: 0;
+            line-height: 22px;
+            font-size: 14px;
+            font-weight: 900;
+            color: #fff;
+            font-family: '黑体';
+        }
+        .content p span{
+            color: #fff;
+            font-weight: 900;
+        }
+        .content.clearAfter{
+            padding: 20px 0;
+        }
+        .content .pic{
+            float: left;
+            margin-left: 4%;
+            width: 28%;
+        }
+        .content .pic .name{
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+        }
+        #center{
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: #4b41ff;
+            background: url("../assets/img/promotion/center_bg.png");
+            background-size: cover;
+        }
+        .center-title{
+            margin: 0 auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+        #footer{
+            padding-top: 10px;
+            padding-bottom: 20px;
+            background-color: #4b41ff;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="../assets/img/promotion/img_1.png" width="100%" alt=""/>
+    <a href="http://120.77.215.7:90/download/TxianGO.apk" class="btn">
+        <img src="../assets/img/promotion/btn.png" width="120" alt=""/>
+        <img class="btn-focus" src="../assets/img/promotion/btn_focus.png" width="130" alt=""/>
+    </a>
+</div>
+<div id="center">
+    <div class="center-bg"></div>
+    <div class="center-title"><img src="../assets/img/promotion/title_1.png" alt="活动简介"></div>
+    <div class="content">
+        <p>活动期间订购“探险狗高级会员0”包月的全国天翼用户，不仅可免费下载应用享受会员权益，
+            观看整本绘画书的全部内容，在网期间还能获得一次的抽奖机会，礼品多多，快来参与吧！
+        </p>
+    </div>
+    <div class="title"><img src="../assets/img/promotion/title_2.png" alt="活动时间"></div>
+    <div class="content">
+        <p><span>活动名称：</span>玩探险狗 ，畅享豪礼</p>
+        <p><span>活动时间：</span>2018年9月1日至2018年12月31日</p>
+    </div>
+    <div class="title"><img src="../assets/img/promotion/title_3.png" alt="活动内容"></div>
+    <div class="content">
+        <p>活动期间，全国电信天翼手机用户成功订购包月产品“探险狗高级会员0”即参与抽奖。
+            一、二、三等奖将在活动结束之后从在网用户中抽取，中奖结果于2019年1月10日进行抽取，
+            并在活动页面上公布， 活动于2018年9月1日开始至2018年12月31日结束</p>
+    </div>
+    <div class="title"><img src="../assets/img/promotion/title_4.png" alt="活动奖品"></div>
+    <div class="content clearAfter">
+        <div class="pic">
+            <img src="../assets/img/promotion/img_5.png" width="100%" alt=""/>
+            <div class="name">iphone8手机</div>
+        </div>
+        <div class="pic">
+            <img src="../assets/img/promotion/img_3.png" width="100%" alt=""/>
+            <div class="name">电信100元充值卡</div>
+        </div>
+        <div class="pic">
+            <img src="../assets/img/promotion/img_4.png" width="100%" alt=""/>
+            <div class="name">电信50元充值卡</div>
+        </div>
+    </div>
+
+</div>
+<div id="footer">
+    <div class="title"><img src="../assets/img/promotion/title_5.png" alt="活动奖品派送"></div>
+    <div class="content">
+        <p>1、2019年1月10日通过客服热线17760519846将电话通知各中奖用户。</p>
+        <p>2、中了手机奖品的用户，我们将准确核对用户信息后。将奖品邮寄到用户指定地址上。</p>
+        <p>3、中了电信话费的用户，收到电话通知的3个工作日内将中奖话费直接充值到中奖手机号上。</p>
+    </div>
+</div>
+
+</body>
+
+</html>

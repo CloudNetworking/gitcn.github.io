@@ -1,0 +1,483 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>渠道数据统计</title>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/amazeui.datetimepicker-se.min.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+</head>
+
+<body data-type="generalComponents">
+<!--加载动画开始-->
+<div class="load-container">
+    <div class="load">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!--加载动画结束-->
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <a href="javascript:;" class="tpl-logo">
+            代计管理系统V2
+        </a>
+    </div>
+    <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+    </div>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+
+            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                <a class="am-dropdown-toggle tpl-header-list-link userNameMore" href="javascript:;">
+                    <span class="tpl-header-list-user-nick userName"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:(0);" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size exit"></span></a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="tpl-page-container tpl-page-header-fixed">
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-100">
+                    <a href="index.html" class="nav-link">
+                        <i class="am-icon-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-200">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>SDK模块</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="channel_list.html" class="chMenu chMenuHide chMenu-20001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>通道管理</span>
+                            </a>
+                            <a href="product_list.html" class="chMenu chMenuHide chMenu-20002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>计费产品管理</span>
+                            </a>
+                            <a href="point_list.html" class="chMenu chMenuHide chMenu-20003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>计费点管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-300">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>CP管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="partner_list.html" class="chMenu chMenuHide chMenu-30001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商管理</span>
+                            </a>
+                            <a href="partner_channel_list.html" class="chMenu chMenuHide chMenu-30002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商渠道管理</span>
+                            </a>
+                            <a href="partner_channel_point_limit.html" class="chMenu chMenuHide chMenu-30003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商渠道计费点限量管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-400">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>订购管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="order_list.html" class="chMenu chMenuHide chMenu-40001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>订单查询</span>
+                            </a>
+
+                            <a href="javascript:;" class="chMenu chMenuHide chMenu-40002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>回调查询</span>
+                            </a>
+                            <a href="short_message_list.html" class="chMenu chMenuHide chMenu-40003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>返回信息查询</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-500">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>运维中心</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="back_list.html" class="chMenu chMenuHide chMenu-50001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>黑名单管理</span>
+                            </a>
+
+                            <a href="number_limit_list.html" class="chMenu chMenuHide chMenu-50002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>限制号段管理</span>
+                            </a>
+                            <a href="province_list.html" class="chMenu chMenuHide chMenu-50003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>省份管理</span>
+                            </a>
+                            <a href="monitor.html" class="chMenu chMenuHide chMenu-50004">
+                                <i class="am-icon-angle-right"></i>
+                                <span>监控管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-600">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
+                        <i class="am-icon-wpforms"></i>
+                        <span>数据统计</span>
+                        <i class="am-icon-angle-down tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu active">
+                        <li>
+                            <a href="channel_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60001 active">
+                                <i class="am-icon-angle-right"></i>
+                                <span>渠道数据统计</span>
+                            </a>
+
+                            <a href="partner_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商数据统计</span>
+                            </a>
+                            <a href="point_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>计费点数据统计</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-700">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>系统管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="role_list.html" class="chMenu chMenuHide chMenu-70001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>角色管理</span>
+                            </a>
+
+                            <a href="administrator_list.html" class="chMenu chMenuHide chMenu-70002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>管理员管理</span>
+                            </a>
+                            <a href="group_list.html" class="chMenu chMenuHide chMenu-70003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>分组管理</span>
+                            </a>
+
+                            <a href="permission_list.html" class="chMenu chMenuHide chMenu-70004">
+                                <i class="am-icon-angle-right"></i>
+                                <span>权限管理</span>
+                            </a>
+                            <a href="javascript:;" class="chMenu chMenuHide chMenu-70004">
+                                <i class="am-icon-angle-right"></i>
+                                <span>日志管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-900">
+                    <a href="javascript:(0);" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-bar-chart"></i>
+                        <span>其他</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="suggest_list.html" class="chMenu chMenuHide chMenu-90001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>建议管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="tpl-content-wrapper">
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 渠道数据统计
+                </div>
+
+
+            </div>
+            <div class="tpl-block">
+                <div class="am-g search-nav am-form">
+                    <div class="am-u-sm-1" style="text-align: right;"><span class=" am-form-label">日期</span></div>
+                    <div class="am-u-sm-12 am-u-md-5" style="padding-left: 0;">
+                        <div class="am-u-sm-12 am-u-md-6">
+                            <div class="am-input-group input-group" id='datetimepicker6'>
+                                <input class="am-form-field startTime">
+                            <span class="am-input-group-label datepickerbutton">
+                              <i class="icon-th am-icon-calendar"></i>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="am-u-sm-12 am-u-md-6">
+                            <div class="am-input-group input-group" id='datetimepicker7'>
+                                <input class="am-form-field endTime">
+                            <span class="am-input-group-label datepickerbutton">
+                              <i class="icon-th am-icon-calendar"></i>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3 province-select-container">
+                        <span class="am-u-sm-3 am-form-label">渠道</span>
+                        <select class="am-u-sm-9 channelList search-select" onchange="setChannel(this)"></select>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3 province-select-container">
+                        <span class="am-u-sm-3 am-form-label">计费点</span>
+                        <select class="am-u-sm-9 pointList search-select" onchange="setPoint(this)">
+                            <option value="">不限</option>
+                        </select>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-1 am-u-md-offset-11">
+                        <div class="am-btn-toolbar">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button style="margin-top: 30px;" type="button" class="am-btn am-btn-default am-btn-success backlist-search-btn" onclick="searchBackList()"><span class="am-icon-search"></span> 搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+
+                        <form class="am-form">
+                            <table class="listTable am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <tr>
+                                    <th>计费点</th>
+                                    <th>省份</th>
+                                    <th>正常请求数（A）</th>
+                                    <th>下发短信数（B）</th>
+                                    <th>提交短信数（C）</th>
+                                    <th>订购成功数（D）</th>
+                                    <th>时间段内总退订数（E）</th>
+                                    <th>时间段内新增退订（F）</th>
+                                    <th>转化率（D/B）</th>
+                                    <th>新增退订率（F/D）</th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <!--<div class="am-cf">
+                                <div id="pages_box" class="col-sx-12 clear">
+                                    <span class="list " id="firstPage">首页</span>
+                                    <span class="list " id="prev">上一页</span>
+                                    <span class="list">第<span id="current_page">0</span>/<span id="total_page">0</span>页</span>
+                                    <span class="list" id="next">下一页</span>
+                                    <span class="list " id="lastPage">尾页</span>
+                                    <span class="list">跳转<input type="text" id="go_page"/>页</span>
+                                    <span class="list">共<span id="total_number">0</span>条</span>
+                                </div>
+                            </div>-->
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tpl-alert"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/amazeui.min.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/jquery.cookie.js"></script>
+<script src="../assets/js/Moment.js"></script>
+<script src="../assets/js/amazeui.datetimepicker-se.min.js"></script>
+<script src="../assets/js/charge.js"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+        getChannel();
+        /*时间选择*/
+        var $dp6 = $('#datetimepicker6');
+        var $dp7 = $('#datetimepicker7');
+        $dp6.datetimepicker();
+        $dp7.datetimepicker({
+            useCurrent: false //Important! See issue #1075
+        });
+        $dp6.on('dp.change', function(e) {
+            $dp7.data('DateTimePicker').minDate(e.date);
+        });
+        $dp7.on('dp.change', function(e) {
+            $dp6.data('DateTimePicker').maxDate(e.date);
+        });
+    });
+
+    //渠道列表
+    function getChannel(){
+        basAjax(basUrl+"dataStatistics/channelStatistics/selectChIdByAccount",
+                {jsonp:"channelBack",account:infoJson.account, token:infoJson.token});
+    }
+    function channelBack(data){
+//        console.log(data);
+        if(data.status == 200){
+            var da = data.data;
+            for(var i = 0 ; i < da.length ; i ++){
+                var list = "<option value='"+da[i].chId+"'>"+da[i].chName+"</option>";
+                $(".channelList").append(list);
+            }
+            pointOpt.chId = da[0].chId;
+            option.chId = da[0].chId;
+            getPoint();
+        }
+        else if(data.status == 444 || data.status == 333){             goLogin(data.status);         }
+    }
+    function setChannel(ob){
+        pointOpt.chId = $(ob).val();
+        option.chId = $(ob).val();
+        getPoint();
+    }
+    //计费点列表
+    var pointOpt = {
+        jsonp:"pointBack",
+        chId:'',
+        account:infoJson.account,
+        token:infoJson.token
+    };
+    function getPoint(){
+        basAjax(basUrl+"CPAdmin/channelAdmin/selectChannelBillingPoint", pointOpt);
+    }
+
+    function pointBack(data){
+//        console.log(data.data);
+        if(data.status == 200){
+            loading();
+            $(".pointList").html("<option value=''>不限</option>");
+            var da = data.data;
+            for(var i = 0 ; i < da.length ; i ++){
+                var list = "<option value='"+da[i].billingPointId+"'>"+da[i].billing_point_name+"</option>";
+                $(".pointList").append(list);
+            }
+            option.billingPointId = '';
+            var _date = new Date();
+            var _year = _date.getFullYear();
+            var _month = _date.getMonth() + 1;
+            var _day = _date.getDate();
+            option.startTime = _year+'-'+_month+'-'+_day+' 00:00:00';
+            option.endTime = _year+'-'+_month+'-'+_day+' 23:59:59';
+            getData(option);
+        }
+        else if(data.status == 444 || data.status == 333){             goLogin(data.status);         }
+    }
+    function setPoint(ob){
+        option.billingPointId = $(ob).val();
+//        getData(option);
+    }
+    var option = {
+        jsonp:'listBack',
+        pageNum:'1',
+        number:'10',
+        startTime:'',
+        endTime:'',
+        chId:'',
+        billingPointId:'',
+        account:infoJson.account,
+        token:infoJson.token
+    };
+    function getData(opt){
+        basAjax(basUrl+"dataStatistics/channelStatistics/selectChannelStatistics",opt);
+    }
+    function listBack(data){
+        console.log(data);
+        loading();
+        if(data.status == 200){
+            $(".listTable tbody").empty();
+            for(var i = 0 ; i < data.data.length ; i ++){
+                var da = data.data[i];
+                var tr = "<tr><td>"+da.billingPointName+"</td><td>"+da.regionName+"</td><td>"+da.validRequestNum+"</td><td>"+da.smsIssueNum+"</td>" +
+                        "<td>"+da.smsSubmitNum+"</td><td class='red-font'>"+da.orderSucceedNum+"</td><td>"+da.unsubscribeNum +"</td><td class='green-font'>"+da.newAddUnsubscribeNum +"</td><td>"+da.conversion +"</td><td>"+da.newAddUnsubscribeRate +"</td></tr>";
+                $(".listTable tbody").append(tr);
+            }
+            //分页
+//            setPage(data);
+        }
+        else if(data.status == 444 || data.status == 333){             goLogin(data.status);         }
+
+    }
+
+    function searchBackList(){
+        var _startTime = $.trim($(".startTime").val());
+        var _endTime = $.trim($(".endTime").val());
+        if( _startTime != '' ){
+            option.startTime = _startTime;
+        }
+        if( _endTime != '' ){
+            option.endTime = _endTime;
+        }
+
+        getData(option);
+    }
+</script>
+
+</body>
+
+</html>

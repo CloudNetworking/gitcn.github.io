@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <title>模拟弹窗</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.1/css/amazeui.min.css">
+</head>
+
+<body id="modal" v-cloak>
+<!--alert模态框dom开始-->
+<div class="am-modal am-modal-alert zl-checkselect-confirm" tabindex="-1" id="my-alert">
+    <div class="am-modal-dialog zl-pay-border">
+        <div class="am-modal-bd">
+            <span class="am-text-xxl">{{{modalOption.alertStr}}}</span>
+            <div>
+                <button type="button" class=" am-modal-btn am-btn-danger zl-confirm-btn" style="width: 70%;border-radius: 6px;background-color: #C50A1D;margin-bottom: 18px;border: none;font-size: 28px;color: #fff;height: 5rem;" data-am-modal-confirm>
+                    <a id="alertJumpHref" style="width:100%;display:inline-block;color:#fff;">{{modalOption.alertBtnText}}</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--alert模态框dom结束-->
+<!--confirm模态框dom开始-->
+<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+    <div class="am-modal-dialog">
+        <div class="am-modal-bd">
+            <span class="am-text-xxl">{{{modalOption.alertStr}}}</span>
+        </div>
+        <div class="am-modal-footer">
+                <span class="zl-modal-btn" data-am-modal-confirm><a id="confirmJumpHref" class="am-text-xxl"
+                                                                    style="width: 50%;display: inline-block;">{{modalOption.confirmBtnText}}</a></span>
+            <span class="zl-modal-btn" data-am-modal-cancel><a id="cancelJumpHref" class="am-text-xxl"
+                                                               style="width: 50%;display: inline-block;">{{modalOption.cancelBtnText}}</a></span>
+        </div>
+    </div>
+</div>
+<!--confirm模态框dom结束-->
+<!--demo按钮开始-->
+<button type="button" class="am-btn am-btn-default" v-on:click="show('alert')">打开alert</button>
+<button type="button" class="am-btn am-btn-primary" v-on:click="show('confirm')">打开confirm</button>
+<button type="button" class="am-btn am-btn-secondary" v-on:click="show('html')">模态内容包含html</button>
+<!--demo按钮结束-->
+<script language="javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.js"></script>
+<script type="text/javascript" src="http://cn.vuejs.org/js/vue.js"></script>
+<script src="http://cdn.amazeui.org/amazeui/2.7.1/js/amazeui.min.js"></script>
+<script>
+
+    /*使用方式：
+    首先在body里引入对应的模态框html，具体请参考妹子UI，模态框样式可自定义
+    其次在vue的data配置里引入modalOption对象，用于保存模态框生成时的数据（如果只使用aler模态框，则confirm相关数据可省略）
+    然后需要在methods里引入showAlertModal或showConfirmModal方法
+    最后调用即可
+
+    */
+    var modal = new Vue({
+        el: '#modal',
+        data: {
+            modalOption: {
+                alertStr: '',
+                confirmBtnText: '',
+                cancelBtnText: '',
+                alertBtnText: ''
+            }
+        },
+        methods: {
+            showAlertModal: function(alertId, alertStr, alertBtnText, callBack) {
+                /*
+                参数说明：
+                *alertId:模态框ID
+                *alertStr：弹窗内容，壳包含html代码
+                *alertBtnText：弹窗按钮内容
+                *callBack：点击按钮时执行的方法
+                */
+                if (!alertBtnText) {
+                    alertBtnText = '确定';
+                }
+                this.modalOption.alertStr = alertStr;
+                this.modalOption.alertBtnText = alertBtnText;
+                $('#' + alertId).modal({
+                    onConfirm: callBack
+                });
+            },
+            showConfirmModal: function(alertId, alertStr, confirmBtnText, cancelBtnText, confirmCallback, cancelCallback) {
+                /*
+                参数说明：
+                *alertId:模态框ID
+                *alertStr：弹窗内容，壳包含html代码
+                *confirmBtnText:按钮文字1
+                *cancelBtnText：按钮文字2
+                *confirmCallback：点击按钮1时执行的方法
+                *cancelCallback：点击按钮2时执行的方法
+                */
+                if (!confirmBtnText) {
+                    confirmBtnText = '确定';
+                }
+
+                if (!cancelBtnText) {
+                    cancelBtnText = '取消';
+                }
+                this.modalOption.confirmBtnText = confirmBtnText;
+                this.modalOption.cancelBtnText = cancelBtnText;
+                this.modalOption.alertStr = alertStr;
+                $('#' + alertId).modal({
+                    onConfirm: confirmCallback,
+                    onCancel: cancelCallback
+                });
+            },
+            /*测试demo所需js，与模态框本身无关*/
+            show: function(type) {
+                var base = this;
+                if (type === 'alert') {
+                    base.showAlertModal('my-alert', '这是一个自定义alert模态框', '关闭', function() {
+                        $('#my-alert').modal('close');
+                    });
+
+                } else if (type === 'confirm') {
+                    base.showConfirmModal('my-confirm', '这是confirm模态框，点是打开带html的模态框，点否关闭', '是', '否', function() {
+                        $('#my-confirm').modal('close');
+                        base.showAlertModal('my-alert', '<div class="title">发布提示</div><div class="content"><div>1.没有优惠券发布，商家信息将不显示在商家列表中。</div><div>2.优惠券一旦被顾客领取，将无法修改券面信息，只能修改数量或者取消发布（下架）。</div><div>3.下架操作不会影响客户已经领取到的优惠券在本核销系统生效使用。</div></div>', '关闭', function() {
+                            $('#my-alert').modal('close');
+                        });
+
+                    }, function() {
+                        $('#my-confirm').modal('close');
+                    });
+                } else if (type === 'html') {
+                    base.showAlertModal('my-alert', '<div class="title">发布提示</div><div class="content"><div>1.没有优惠券发布，商家信息将不显示在商家列表中。</div><div>2.优惠券一旦被顾客领取，将无法修改券面信息，只能修改数量或者取消发布（下架）。</div><div>3.下架操作不会影响客户已经领取到的优惠券在本核销系统生效使用。</div></div>', '关闭', function() {
+                        $('#my-alert').modal('close');
+                    });
+                }
+            }
+        }
+    });
+</script>
+</body>
+
+</html>

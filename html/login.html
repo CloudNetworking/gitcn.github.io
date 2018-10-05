@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>代计管理系统V3</title>
+	<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<META HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="description" content="">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="">
+  <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/amazeui.min.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/echarts.min.js"></script>
+	<script src="../assets/js/iscroll.js"></script>
+	<!--<script src="assets/js/jquery.cookie.js"></script>-->
+	<script src="../assets/js/md5.js"></script>
+	<script src="../assets/js/charge.js"></script>
+	<style type="text/css">
+		.login-font{
+			color: #fff;
+			font-size: 20px;
+		}
+	</style>
+</head>
+
+<body data-type="login">
+
+  <div class="am-g myapp-login">
+	<div class="myapp-login-logo-block  tpl-login-max">
+		<div class="myapp-login-logo-text">
+			<div class="myapp-login-logo-text">
+				 <i class="am-icon-skyatlas"></i>
+
+			</div>
+		</div>
+
+		<div class="am-u-sm-10 login-am-center">
+			<form class="am-form">
+				<fieldset>
+					<div class="am-form-group">
+						<input type="text" class="account"  placeholder="请输入账号">
+					</div>
+					<div class="am-form-group">
+						<input type="password" class="password" placeholder="请输入密码">
+					</div>
+					<p><button type="button" id="login" class="am-btn am-btn-default">登 录</button></p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+
+  <script type="text/javascript" charset="utf-8">
+	  $(function(){
+
+	  });
+	  function login(){
+		  var account = $.trim($(".account").val());
+		  var password = $.trim($(".password").val());
+		  if(!account){
+			  notice("请输入账号！",1,1500);
+		  }
+		  else if(!password){
+			  notice("请输入密码！",1,1500);
+		  }
+		  else{
+			  var opt = {
+				  jsonp:'loginback',
+				  account:account,
+				  password: $.md5(password)
+			  };
+			  console.log(basUrl+"userAdmin/login");
+			  basAjax(basUrl+"userAdmin/login",opt);
+		  }
+	  }
+	  $("#login").click(function(){
+		  login();
+	  });
+	  function loginback(data){
+		  console.log(data);
+		  if(data.status == '200'){
+			  var userInfo = JSON.stringify(data.data);
+			  mCookie.set("userInfo",userInfo,7);
+			  window.location.href = "index.html";
+		  }
+		  else{
+			  notice(data.msg,1,1500);
+		  }
+	  }
+	  document.onkeydown = function(e){
+		  var ev = document.all ? window.event : e;
+		  if(ev.keyCode==13) {
+			  login();
+		  }
+	  }
+  </script>
+</body>
+
+</html>

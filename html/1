@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>代计管理系统V3</title>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="description" content="">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <script src="../assets/js/echarts.min.js"></script>
+
+    <style type="text/css">
+        .am-topbar-inverse .am-topbar-brand a{
+            color: #333;
+        }
+    </style>
+</head>
+
+<body data-type="index">
+
+
+    <header class="am-topbar am-topbar-inverse admin-header">
+        <div class="am-topbar-brand">
+            <a href="javascript:;" class="tpl-logo">
+                代计管理系统V3
+            </a>
+        </div>
+        <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+        </div>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+                <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link userNameMore" href="javascript:;">
+                        <span class="tpl-header-list-user-nick userName"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                        <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                        <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:(0);" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size exit"></span></a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <div class="tpl-page-container tpl-page-header-fixed">
+
+
+        <div class="tpl-left-nav tpl-left-nav-hover">
+            <div class="tpl-left-nav-list">
+                <ul class="tpl-left-nav-menu">
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-100">
+                        <a href="javascript:(0);" class="nav-link active">
+                            <i class="am-icon-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-200">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>SDK模块</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="channel_list.html" class="chMenu chMenuHide chMenu-20001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>通道管理</span>
+                                </a>
+                                <a href="product_list.html" class="chMenu chMenuHide chMenu-20002">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>计费产品管理</span>
+                                </a>
+                                <a href="point_list.html" class="chMenu chMenuHide chMenu-20003">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>计费点管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-300">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>CP管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="partner_list.html" class="chMenu chMenuHide chMenu-30001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>合作商管理</span>
+                                </a>
+                                <a href="partner_channel_list.html" class="chMenu chMenuHide chMenu-30002">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>合作商渠道管理</span>
+                                </a>
+                                <a href="partner_channel_point_limit.html" class="chMenu chMenuHide chMenu-30003">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>合作商渠道计费点限量管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-400">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>订购管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="order_list.html" class="chMenu chMenuHide chMenu-40001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>订单查询</span>
+                                </a>
+
+                                <a href="javascript:;" class="chMenu chMenuHide chMenu-40002">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>回调查询</span>
+                                </a>
+                                <a href="short_message_list.html" class="chMenu chMenuHide chMenu-40003">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>返回信息查询</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-500">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>运维中心</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="back_list.html" class="chMenu chMenuHide chMenu-50001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>黑名单管理</span>
+                                </a>
+
+                                <a href="number_limit_list.html" class="chMenu chMenuHide chMenu-50002">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>限制号段管理</span>
+                                </a>
+                                <a href="province_list.html" class="chMenu chMenuHide chMenu-50003">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>省份管理</span>
+                                </a>
+                                <a href="monitor.html" class="chMenu chMenuHide chMenu-50004">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>监控管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-600">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>数据统计</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="channel_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>渠道数据统计</span>
+                                </a>
+
+                                <a href="partner_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60002">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>合作商数据统计</span>
+                                </a>
+                                <a href="point_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60003">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>计费点数据统计</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-700">
+                        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-wpforms"></i>
+                            <span>系统管理</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="role_list.html" class="chMenu chMenuHide chMenu-70001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>角色管理</span>
+                                </a>
+
+                                <a href="administrator_list.html" class="chMenu chMenuHide chMenu-70002">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>管理员管理</span>
+                                </a>
+                                <a href="group_list.html" class="chMenu chMenuHide chMenu-70003">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>分组管理</span>
+                                </a>
+
+                                <a href="permission_list.html" class="chMenu chMenuHide chMenu-70004">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>权限管理</span>
+                                </a>
+                                <a href="javascript:;" class="chMenu chMenuHide chMenu-70005">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>日志管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-900">
+                        <a href="javascript:(0);" class="nav-link tpl-left-nav-link-list">
+                            <i class="am-icon-bar-chart"></i>
+                            <span>其他</span>
+                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                        </a>
+                        <ul class="tpl-left-nav-sub-menu">
+                            <li>
+                                <a href="suggest_list.html" class="chMenu chMenuHide chMenu-90001">
+                                    <i class="am-icon-angle-right"></i>
+                                    <span>建议管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="tpl-content-wrapper">
+            <div class="tpl-content-page-title">
+
+            </div>
+            <ol class="am-breadcrumb">
+                <li><a href="#" class="am-icon-home">首页</a></li>
+            </ol>
+
+            <div class="row">
+                <div class="am-u-lg-4 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat blue">
+                        <div class="visual">
+                            <i class="am-icon-comments-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number addNum"> — </div>
+                            <div class="desc"> 当天/当月新增数 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                            <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="am-u-lg-4 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat red">
+                        <div class="visual">
+                            <i class="am-icon-bar-chart-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number UnsubscribeNum"> — </div>
+                            <div class="desc"> 当天/当月退订数 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                            <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="am-u-lg-4 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat green">
+                        <div class="visual">
+                            <i class="am-icon-apple"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number totalNum"> — </div>
+                            <div class="desc"> 总在网数 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                            <i class="m-icon-swapright m-icon-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <!--<div class="row">
+                <div class="am-u-md-6 am-u-sm-12 row-mb">
+                    <div class="tpl-portlet">
+                        <div class="tpl-portlet-title">
+                            <div class="tpl-caption font-green ">
+                                <i class="am-icon-cloud-download"></i>
+                                <span> Cloud 数据统计</span>
+                            </div>
+                            <div class="actions">
+                                <ul class="actions-btn">
+                                    <li class="red-on">昨天</li>
+                                    <li class="green">前天</li>
+                                    <li class="blue">本周</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        &lt;!&ndash;此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts&ndash;&gt;
+                        <div class="tpl-echarts" id="tpl-echarts-A">
+
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/amazeui.min.js"></script>
+    <!--<script src="assets/js/iscroll.js"></script>-->
+    <script src="../assets/js/app.js"></script>
+    <!--<script src="../assets/js/jquery.cookie.js"></script>-->
+    <script src="../assets/js/charge.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function(){
+            initData();
+        });
+        function initData(){
+            basAjax(basUrl+"homePage/selectCurrentMonthAndDayNewAddition",{jsonp:"addNumBack",account:infoJson.account,token:infoJson.token});
+            basAjax(basUrl+"homePage/selectCurrentMonthAndDayUnsubscribe",{jsonp:"unSubNumBack",account:infoJson.account,token:infoJson.token});
+            basAjax(basUrl+"homePage/selectTotalUser",{jsonp:"totalBack",account:infoJson.account,token:infoJson.token});
+        }
+        function addNumBack(data){
+//            console.log(data);
+            if(data.status == 200){
+                $(".addNum").html(data.data.CurrentDayNewAdd+"/"+data.data.CurrentMonthNewAdd);
+            }
+            else if(data.status == 444 || data.status == 333)
+            {             goLogin(data.status);         }
+            else{
+                notice(data.msg,0,1500);
+            }
+        }
+        function unSubNumBack(data){
+            if(data.status == 200){
+                $(".UnsubscribeNum").html(data.data.CurrentDayUnsubscribe+"/"+data.data.CurrentMonthUnsubscribe);
+            }
+
+        }
+        function totalBack(data){
+            if(data.status == 200){
+                $(".totalNum").html(data.data.totalUser);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

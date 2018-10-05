@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>代计管理系统V2</title>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+</head>
+
+<body data-type="generalComponents">
+<!--加载动画开始-->
+<div class="load-container">
+    <div class="load">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!--加载动画结束-->
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <a href="javascript:;" class="tpl-logo">
+            代计管理系统V2
+        </a>
+    </div>
+    <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+    </div>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+
+            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                <a class="am-dropdown-toggle tpl-header-list-link userNameMore" href="javascript:;">
+                    <span class="tpl-header-list-user-nick userName"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:(0);" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size exit"></span></a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="tpl-page-container tpl-page-header-fixed">
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-100">
+                    <a href="index.html" class="nav-link">
+                        <i class="am-icon-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-200">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
+                        <i class="am-icon-wpforms"></i>
+                        <span>SDK模块</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu active">
+                        <li>
+                            <a href="channel_list.html" class="chMenu chMenuHide chMenu-20001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>通道管理</span>
+                            </a>
+                            <a href="product_list.html" class="chMenu chMenuHide chMenu-20002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>计费产品管理</span>
+                            </a>
+                            <a href="point_list.html" class="chMenu chMenuHide chMenu-20003 active">
+                                <i class="am-icon-angle-right"></i>
+                                <span>计费点管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-300">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>CP管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="partner_list.html" class="chMenu chMenuHide chMenu-30001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商管理</span>
+                            </a>
+                            <a href="partner_channel_list.html" class="chMenu chMenuHide chMenu-30002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商渠道管理</span>
+                            </a>
+                            <a href="partner_channel_point_limit.html" class="chMenu chMenuHide chMenu-30003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商渠道计费点限量管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-400">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>订购管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="order_list.html" class="chMenu chMenuHide chMenu-40001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>订单查询</span>
+                            </a>
+
+                            <a href="javascript:;" class="chMenu chMenuHide chMenu-40002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>回调查询</span>
+                            </a>
+                            <a href="short_message_list.html" class="chMenu chMenuHide chMenu-40003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>返回信息查询</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-500">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>运维中心</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="back_list.html" class="chMenu chMenuHide chMenu-50001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>黑名单管理</span>
+                            </a>
+
+                            <a href="number_limit_list.html" class="chMenu chMenuHide chMenu-50002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>限制号段管理</span>
+                            </a>
+                            <a href="province_list.html" class="chMenu chMenuHide chMenu-50003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>省份管理</span>
+                            </a>
+                            <a href="monitor.html" class="chMenu chMenuHide chMenu-50004">
+                                <i class="am-icon-angle-right"></i>
+                                <span>监控管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-600">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>数据统计</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="channel_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>渠道数据统计</span>
+                            </a>
+
+                            <a href="partner_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作商数据统计</span>
+                            </a>
+                            <a href="point_statistics.html" target="_blank" class="chMenu chMenuHide chMenu-60003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>计费点数据统计</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-700">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>系统管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="role_list.html" class="chMenu chMenuHide chMenu-70001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>角色管理</span>
+                            </a>
+
+                            <a href="administrator_list.html" class="chMenu chMenuHide chMenu-70002">
+                                <i class="am-icon-angle-right"></i>
+                                <span>管理员管理</span>
+                            </a>
+                            <a href="group_list.html" class="chMenu chMenuHide chMenu-70003">
+                                <i class="am-icon-angle-right"></i>
+                                <span>分组管理</span>
+                            </a>
+
+                            <a href="permission_list.html" class="chMenu chMenuHide chMenu-70004">
+                                <i class="am-icon-angle-right"></i>
+                                <span>权限管理</span>
+                            </a>
+                            <a href="javascript:;" class="chMenu chMenuHide chMenu-70005">
+                                <i class="am-icon-angle-right"></i>
+                                <span>日志管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item parentMenu parentMenuHide parentMenu-900">
+                    <a href="javascript:(0);" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-bar-chart"></i>
+                        <span>其他</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="suggest_list.html" class="chMenu chMenuHide chMenu-90001">
+                                <i class="am-icon-angle-right"></i>
+                                <span>建议管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="tpl-content-wrapper">
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 新增计费点限额
+                </div>
+            </div>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <ul class="province-ul clearAfter"></ul>
+                </div>
+                <div class="am-form-group am-u-sm-12">
+                    <div class="am-u-sm-1">
+                        <button type="button" class="am-btn am-btn-success sub-btn">确认</button>
+                    </div>
+                    <div class="am-u-sm-1">
+                        <button type="button" class="am-btn am-btn-default close-btn">取消</button>
+                    </div>
+                    <div class="am-u-sm-1"></div>
+                </div>
+            </div>
+            <div class="am-g data-table">
+                <div class="am-u-sm-7"><h4 style="text-align: center;">新增结果</h4></div>
+                <div class="am-u-sm-7">
+                    <table class="am-table am-table-striped am-table-hover ">
+                        <thead>
+                        <tr>
+                            <th>省份</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="am-u-sm-1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/amazeui.min.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/jquery.cookie.js"></script>
+<script src="../assets/js/charge.js"></script>
+<script type="text/javascript">
+    var url = window.location.href;
+    var _id = url.split("?")[1];
+    $(function(){
+        getData(option);
+    });
+
+
+//省份状态
+    var stutsOpt = {
+        jsonp:"stutsBack",
+        billingPointId:_id,
+        account:infoJson.account,
+        token:infoJson.token
+    };
+    
+    function setStuts(){
+        basAjax(basUrl+"SDKAdmin/billingPointAdmin/selectBillingPointLimitByBillingPointIdToList", stutsOpt);
+    }
+    function stutsBack(data){
+    	console.log(data);
+    	if(data.status == 200){
+    		var proList = document.getElementsByClassName("proList");
+            	for( var j = 0 ; j < proList.length ; j ++ ){
+            		proList[j].className = "proList";
+            	}
+            var da = data.data;
+            for( var i = 0 ; i < da.length ; i ++ ) {
+            	var limitCode = da[i].region_code;
+            	var proList = document.getElementsByClassName("proList");
+            	for( var k = 0 ; k < proList.length ; k ++ ){
+            		var proCode = proList[k].getAttribute("data-id");
+            		if( limitCode == proCode ){
+            			proList[k].className = "proList active";
+            		}
+            	}
+            }
+        }
+        else if(data.status == 444 || data.status == 333){             goLogin(data.status);         }
+    }
+
+    var option = {
+        jsonp:'listBack',
+        account:infoJson.account,
+        token:infoJson.token
+    };
+    function getData(opt){
+        basAjax(basUrl+"operationsCenter/regionManagement/selectRegionToList",opt);
+    }
+    function listBack(data){
+        $(".province-ul").empty();
+        loading();
+        if(data.status == 200){
+            var da = data.data;
+            for( var i = 0 ; i < da.length ; i ++ ){
+                var li = "<li class='proList' data-id='"+da[i].regionCode+"'>"+da[i].regionName+"</li>";
+                $(".province-ul").append(li);
+            }
+            setStuts(stutsOpt);
+        }
+        else if(data.status == 444 || data.status == 333){             goLogin(data.status);         }
+    }
+
+    /*选中省份*/
+    $(".province-ul").on("click","li",function(){
+        if($(this).hasClass("active")){
+            $(this).removeClass("active");
+        }
+        else{
+            $(this).addClass("active");
+        }
+    });
+
+    /*提交事件*/
+    $(".sub-btn").click(function(){
+        var chargingPointLimitListArr = [];
+        var j = 0;
+        for( var i = 0 ; i < $(".province-ul li").length ; i ++ ){
+            if($(".province-ul li").eq(i).hasClass("active")){
+                var code = $(".province-ul li").eq(i).attr("data-id");
+                var codejson = {billingPointId:_id,regionCode:code};
+                chargingPointLimitListArr[j]=codejson;
+                j++;
+            }
+        }
+        var chargingPointLimitListStr = JSON.stringify(chargingPointLimitListArr);
+        if(chargingPointLimitListArr.length < 1){
+            notice("请选择限制省份",0,1000);
+        }
+        else{
+            var opt = {
+                jsonp:"addback",
+                chargingPointLimitListStr:chargingPointLimitListStr,
+                account:infoJson.account,
+                token:infoJson.token
+            };
+            basAjax(basUrl+"SDKAdmin/billingPointAdmin/addBillingPointLimitList",opt);
+        }
+    });
+
+    function addback(data){
+        $(".data-table tbody").empty();
+        if(data.status == 200){
+            var da = data.data;
+            for( var i = 0 ; i < da.length ; i ++ ){
+                var tr = "<tr><td>"+da[i].RegionName+"</td><td>"+da[i].result+"</td></tr>";
+                $(".data-table tbody").append(tr);
+            }
+            $(".data-table").show();
+            notice("操作成功",1,1000);
+        }
+        else{
+            notice(data.msg,0,1000);
+        }
+    }
+
+    /*取消编辑*/
+    $(".close-btn").click(function(){
+        window.history.go(-1);
+    });
+
+</script>
+
+</body>
+
+</html>
