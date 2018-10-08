@@ -318,14 +318,20 @@
 <script src="../assets/js/charge.js"></script>
 <script type="text/javascript" charset="utf-8">
     function sub(){
-        var phone = $.trim($(".phone").val());
-        var opt = {
-            jsonp:'subback',
-            phone:phone,
-            account:infoJson.account,
-            token:infoJson.token
-        };
-        basAjax(basUrl+"operationsCenter/businessUnsubscribe/jsUnsubscribe",opt);
+        if(  infoJson == null || infoJson == 'undefined' || infoJson == ''){
+            window.location.href = "login.html?backurl="+window.location.href;
+        }
+        else{
+            var phone = $.trim($(".phone").val());
+            var opt = {
+                jsonp:'subback',
+                phone:phone,
+                account:infoJson.account,
+                token:infoJson.token
+            };
+            basAjax(basUrl+"operationsCenter/businessUnsubscribe/jsUnsubscribe",opt);
+
+        }
     }
     $("#sub_btn").click(function(){
         sub();
