@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>江苏号码退订</title>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="description" content="">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="../assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/amazeui.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/echarts.min.js"></script>
+    <script src="../assets/js/iscroll.js"></script>
+    <!--<script src="assets/js/jquery.cookie.js"></script>-->
+    <script src="../assets/js/md5.js"></script>
+    <script src="../assets/js/charge.js"></script>
+    <style type="text/css">
+        .login-font{
+            color: #fff;
+            font-size: 20px;
+        }
+        .myapp-login{
+            background-color: #fff;
+        }
+        .login-am-center .am-form input.phone{
+            border: 1px solid #ddd;
+        }
+        .login-am-center .am-form .am-form-group:first-child input.phone{
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+        .back-info{
+            padding-left: 10px;
+            line-height: 30px;
+            /*color: #aa3333;*/
+            font-size: 14px;
+            /*border-bottom: 1px solid #ccc;*/
+        }
+    </style>
+</head>
+
+<body data-type="login">
+
+<div class="am-g myapp-login">
+    <div class="myapp-login-logo-block  tpl-login-max" style="padding-top: 100px;">
+
+        <div class="am-u-sm-10 login-am-center">
+            <form class="am-form">
+                <fieldset>
+                    <div class="am-form-group">
+                        <input type="text" class="phone"  placeholder="请输入手机号码">
+                    </div>
+
+                    <p><button type="button" id="sub_btn" class="am-btn am-btn-default">确 认</button></p>
+                </fieldset>
+            </form>
+            <div class="back-info"></div>
+            <div class="back-info"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    function sub(){
+        var phone = $.trim($(".phone").val());
+        var opt = {
+            jsonp:'subback',
+            phone:phone,
+            account:infoJson.account,
+            token:infoJson.token
+        };
+        basAjax(basUrl+"operationsCenter/businessUnsubscribe/jsUnsubscribe",opt);
+    }
+    $("#sub_btn").click(function(){
+        sub();
+    });
+    function subback(data){
+        console.log(data);
+        if(data.status == '200'){
+            $(".back-info").eq(0).html("结果：成功");
+            $(".back-info").eq(1).html("描述："+data.msg);
+        }
+        else if(data.status == 444 || data.status == 333){
+            window.location.href = "login.html?backurl="+window.location.href;
+        }
+        else {
+            $(".back-info").eq(0).html("结果：失败");
+            $(".back-info").eq(1).html("描述："+data.msg);
+        }
+    }
+    document.onkeydown = function(e){
+        var ev = document.all ? window.event : e;
+        if(ev.keyCode==13) {
+            sub();
+        }
+    }
+</script>
+</body>
+
+</html>

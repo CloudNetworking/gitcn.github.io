@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>代计管理系统V3</title>
+  <title>代计管理系统V2</title>
 	<META HTTP-EQUIV="pragma" CONTENT="no-cache">
 	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
 	<META HTTP-EQUIV="expires" CONTENT="0">
@@ -94,7 +94,13 @@
 		  if(data.status == '200'){
 			  var userInfo = JSON.stringify(data.data);
 			  mCookie.set("userInfo",userInfo,7);
-			  window.location.href = "index.html";
+			  if( window.location.href.indexOf("backurl=") > -1 ){
+                  window.location.href = window.location.href.split("backurl=")[1];
+			  }
+			  else {
+                  window.location.href = "index.html";
+			  }
+
 		  }
 		  else{
 			  notice(data.msg,1,1500);
