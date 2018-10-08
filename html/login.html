@@ -94,12 +94,13 @@
 		  if(data.status == '200'){
 			  var userInfo = JSON.stringify(data.data);
 			  mCookie.set("userInfo",userInfo,7);
-			  if( window.location.href.indexOf("backurl=") > -1 ){
+              window.location.href = "index.html";
+			  /*if( window.location.href.indexOf("backurl=") > -1 ){
                   window.location.href = window.location.href.split("backurl=")[1];
 			  }
 			  else {
                   window.location.href = "index.html";
-			  }
+			  }*/
 
 		  }
 		  else{

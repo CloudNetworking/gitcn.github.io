@@ -9,7 +9,7 @@ var prdouctArr = [];//产品
 
 //var basUrl = "http://120.77.170.239:8082/";
 // var basUrl = "http://120.77.170.239/test/background/";
-var basUrl = "http://120.77.170.239/test/billingV3/background/";
+var basUrl = "https://120.77.170.239/test/billingV3/background/";
 
 //共用ajax
 function basAjax(url, opt) {
@@ -27,12 +27,12 @@ var infoStr = mCookie.get("userInfo");
 var infoJson = $.parseJSON(infoStr);
 $(function(){
     //页头
+    console.log(infoJson);
 
     if(infoJson == '' || infoJson == 'undefined' || infoJson == null){
 
         var url = window.location.href;
         if(url.indexOf("login") < 0){
-
             goLogin();
         }
     }
