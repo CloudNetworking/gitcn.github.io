@@ -9,7 +9,7 @@ var prdouctArr = [];//产品
 
 //var basUrl = "http://120.77.170.239:8082/";
 // var basUrl = "http://120.77.170.239/test/background/";
-var basUrl = "http://120.77.170.239/test/billingV3/background/";
+var basUrl = "https://120.77.170.239/test/billingV3/background/";
 
 //共用ajax
 function basAjax(url, opt) {
